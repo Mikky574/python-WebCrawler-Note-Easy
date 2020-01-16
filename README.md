@@ -352,8 +352,8 @@ select * from rank
 
 以及最终爬取数据后的效果：
 
-![创建脚本图示 创建脚本](intro_pic/PostgreSQl_jiob.png)
+![创建脚本图示 创建脚本](intro_pic/PostgreSQL_jiob.png)
 
 用select语句查看结果：
 
-![结果图示 存储的信息](intro_pic/PostgreSQl_result.png)
+![结果图示 存储的信息](intro_pic/PostgreSQL_result.png)
