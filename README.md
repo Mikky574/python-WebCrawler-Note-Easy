@@ -274,7 +274,7 @@ user='postgres' #用户的名称
 password=getpass.getpass('password:') #隐藏输入的密码
 
 """
-database:University
+database:xiapuxiapu_ganguo
 user:postgres
 password:
 """
