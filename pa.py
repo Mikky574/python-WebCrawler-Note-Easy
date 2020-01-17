@@ -23,25 +23,25 @@ html_doc = get_one_page("https://www.bilibili.com/ranking/all/0/0/3")
 soup = BeautifulSoup(html_doc, 'lxml')
 i = 0
 d = []
+l1 = soup.find_all('div', attrs={'class': 'num'})
+l2 = soup.find_all('a', attrs={'class': 'title'})
 while True:
     try:
         dic = {}
-        l1 = soup.find_all('div', attrs={'class': 'num'})[i]
-        for m in l1:
+        for m in l1[i]:
             dic["rank"] = m
-        for k in soup.find_all('a', attrs={'class': 'title'})[i]:
+        for k in l2[i]:
             dic["name"] = k.replace("'", '\"')
-        href = soup.find_all('a', attrs={'class': 'title'})[i]
-        href1 = href["href"]
-        dic["href"] = href1
+            # l1=re.findall(r'div class="num">(.?)*</div>',soup)
+        href = l2[i]["href"]
+        dic["href"] = href
         d.append(dic)
         i += 1
     except:
         for i in d:
             print(i)
-        json_d = json.dumps(d, ensure_ascii=False)  # 输出为json
+        json_d = json.dumps(d, ensure_ascii=False)
         break
-input()
 
 data = json.loads(json_d)
 # print(data[0]["name"])
