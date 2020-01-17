@@ -20,13 +20,13 @@ html_doc =get_one_page("https://www.bilibili.com/ranking/all/0/0/3")
 soup=BeautifulSoup(html_doc,'lxml')
 i=0
 d=[]
+l1=soup.find_all('div',attrs={'class':'num'})
+l2=soup.find_all('a',attrs={'class':'title'})
 while True:
     try:
         dic={}
-        l1=soup.find_all('div',attrs={'class':'num'})
         for m in l1[i]:
             dic["rank"]=m
-        l2=soup.find_all('a',attrs={'class':'title'})
         for k in l2[i]:
             dic["name"]=k.replace("'",'\"')
             #l1=re.findall(r'div class="num">(.?)*</div>',soup)
