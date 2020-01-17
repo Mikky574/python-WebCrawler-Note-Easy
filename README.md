@@ -261,7 +261,6 @@ while True:
             print(i)
         json_d = json.dumps(d,ensure_ascii=False)   #输出为json
         break
-input()
 
 data=json.loads(json_d)
 #print(data[0]["name"])
