@@ -25,10 +25,10 @@ i = 0
 d = []
 l1 = soup.find_all('div', attrs={'class': 'num'})
 l2 = soup.find_all('a', attrs={'class': 'title'})
-while True:
+while True: #创造死循环，一直到i突破列表上限，会IndexError，然后执行except退出循环
     try:
         dic = {}
-        for m in l1[i]:
+        for m in l1[i]: #这里取出div框里的数据
             dic["rank"] = m
         for k in l2[i]:
             dic["name"] = k.replace("'", '\"')
